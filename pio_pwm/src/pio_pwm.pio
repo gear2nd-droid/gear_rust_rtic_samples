@@ -1,0 +1,18 @@
+.program pio_pwm
+.side_set 0
+
+.wrap_target
+    pull block
+    mov x, osr
+
+    pull block
+    mov y, osr
+
+    set pins, 1
+high:
+    jmp x-- high
+
+    set pins, 0
+low:
+    jmp y-- low
+.wrap
