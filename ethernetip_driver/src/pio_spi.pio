@@ -1,0 +1,12 @@
+.program pio_spi
+.side_set 1
+
+.wrap_target
+pull block          side 0
+set x, 7            side 0
+bitloop:
+    out pins, 1     side 0
+    in pins, 1      side 1
+    jmp x-- bitloop side 0
+push block          side 0
+.wrap
